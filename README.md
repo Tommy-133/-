@@ -1,4 +1,4 @@
-在忘记root密码的时候，可以这样   
+在忘记root密码的时候，可以这样
 
 以windows为例：   
 
@@ -21,3 +21,64 @@
 8. 退出 quit。  
 
 9. 注销系统，再进入，使用用户名root和刚才设置的新密码123登录。
+
+## 直接解压mysql-advanced-5.7.27-win32.zip
+
+1.解压后，初始化MySQL的：
+
+```
+mysqld-初始化
+```
+
+   执行完成后，会输出root用户的初始初始密码
+
+2.安装成为的Windows服务：
+
+```
+mysqld安装
+```
+
+3.启动MySQL：
+
+```
+启动mysqld
+```
+
+4. Mysql安装成功后，默认的root用户密码为空，需要创建root用户的密码：
+
+```
+mysqladmin -u root密码“ new_password”；
+```
+
+5.连接到mysql的服务器：
+
+```
+mysql -u root -p
+输入密码：*******     
+```
+
+6.解压的MySQL-GUI的工具-noinstall-5.0-R17-Win32中，用MySQLQueryBrowser工具创建数据库，创建表
+
+## 运行安装程序的MySQL的安装程序，商业8.0.17.0.msi：
+
+    https://blog.csdn.net/bobo553443/article/details/81383194
+    注意安装的时候要输入用户名，密码
+    安装完成后可以用工作台来创建数据库，创建表
+
+## 遇到的问题
+
+1.命令行可访问的MySQL，但GUI工具连接不上的MySQL
+
+```
+mysql> ALTER USER'root'@'localhost'与mysql_native_password标识为'123456';
+```
+
+2.修改密码：
+
+```
+mysql> ALTER USER'root'@'localhost'由'123456'密码永不过期；
+```
+
+3.忘记密码无法登陆：
+
+停止MySQL服务，删除数据文件夹，重新运行mysqld --initialize
