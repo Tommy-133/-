@@ -82,3 +82,17 @@ mysql> ALTER USER'root'@'localhost'由'123456'密码永不过期；
 3.忘记密码无法登陆：
 
 停止MySQL服务，删除数据文件夹，重新运行mysqld --initialize
+
+git设置
+
+1.git config --global user.name "你的名字或昵称"
+
+　git config --global user.email "你的邮箱"
+
+2.git init
+
+  git remote add origin <你的项目地址> //注:项目地址形式为:https://gitee.com/xxx/xxx.git或者 git@gitee.com:xxx/xxx.git
+
+3.如果你想克隆，只需要执行命令
+  
+  git clone <项目地址>
